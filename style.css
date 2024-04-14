@@ -14,8 +14,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 100px;
+  padding: 15px 70px;
 }
+
 .logo {
   text-decoration: none;
   color: white;
@@ -35,6 +36,37 @@ header {
 
 .navigation a:hover {
   color: #601cfc;
+}
+.menu-toggle {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white; 
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .navigation.active {
+    display: flex;
+  }
+
+  .navigation a {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 section {
   padding: 100px 50px;
@@ -98,7 +130,6 @@ section {
   font-weight: 700;
   margin-bottom: 30px;
   letter-spacing: 1px;
-  
 }
 
 .content {
@@ -188,36 +219,35 @@ section {
   display: flex;
   margin-top: 10px;
   text-decoration: none;
-  color:#601cfc;
+  color: #601cfc;
   flex-direction: row-reverse;
   font-size: 1em;
   font-weight: 600;
 }
 .view:hover {
-  color:#2f029a;
+  color: #2f029a;
 }
 
-.footer{
-    background-color: black;
-    color: white;
-    padding: 30px;
-    display: flex;
-    justify-content: space-between;
+.footer {
+  background-color: black;
+  color: white;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.social-icons-footer a{
-    color: white;
-    margin: 20px;
-    font-size: 20px;
+.social-icons-footer a {
+  color: white;
+  margin: 15px;
+  font-size: 20px;
 }
-.footer-title{
-    font-size: 0.9em;
-    font-weight: 600;
+.footer-title {
+  font-size: 0.9em;
+  font-weight: 600;
 }
-.footer-title span{
-    color:#601cfc;
+.footer-title span {
+  color: #601cfc;
 }
 /* .social-icons-footer{
    text-align: right;
 } */
-
