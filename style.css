@@ -14,7 +14,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 70px;
+  padding: 15px 50px;
 }
 
 .logo {
@@ -41,46 +41,40 @@ header {
   display: none;
   font-size: 1.5em;
   cursor: pointer;
-  color: white; 
+  color: white;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navigation {
-    display: none;
-    flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .navigation.active {
-    display: flex;
-  }
-
-  .navigation a {
-    margin: 10px 0;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
 section {
   padding: 100px 50px;
 }
 .main {
+  position: relative; /* Ajoutez position: relative pour que la pseudo-classe ::before fonctionne */
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url(img/backgroundImg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  opacity: 0.7; /* Ajustez la valeur d'opacité selon vos besoins */
+  z-index: -1; /* Assurez-vous que le pseudo-élément est placé en arrière-plan */
+}
+
+/* Vos autres styles pour le contenu à l'intérieur de .main vont ici */
+
+.center {
+  text-align: center;
 }
 .main h2 span {
   color: #3e03c9;
@@ -91,7 +85,9 @@ section {
 }
 .main h2 {
   font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
 }
 .main h3 {
   font-size: 1.3em;
@@ -104,11 +100,11 @@ section {
   background-color: #3e03c9;
   text-decoration: none;
   font-size: 1em;
-  font-weight: 600;
+  font-weight: 700;
   display: inline-block;
-  padding: 0.7em;
+  padding: 1em;
   letter-spacing: 1px;
-  border-radius: 13px;
+  border-radius: 10px;
   margin-bottom: 30px;
   transition: 0.7s ease;
 }
@@ -119,7 +115,9 @@ section {
 
 .social-icons a {
   font-size: 1.3em;
-  padding-right: 25px;
+  padding-right: 20px;
+  font-weight: 700;
+  color: black;
 }
 
 .title {
@@ -240,6 +238,7 @@ section {
   color: white;
   margin: 15px;
   font-size: 20px;
+  
 }
 .footer-title {
   font-size: 0.9em;
@@ -248,6 +247,51 @@ section {
 .footer-title span {
   color: #601cfc;
 }
-/* .social-icons-footer{
-   text-align: right;
-} */
+
+@media screen and (max-width: 768px) {
+  header {
+    align-items: center;
+    padding: 10px 40px;
+  }
+
+  .navigation a {
+    font-weight: 300;
+    padding-left: 10px;
+  }
+
+  .navigation {
+    display: none;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .navigation.active {
+    display: flex;
+  }
+
+  .navigation a {
+    margin: 10px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .footer {
+    background-color: black;
+    color: white;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .social-icons-footer a {
+    color: white;
+    margin: 5px;
+    font-size: 15px;
+  }
+  .footer-title {
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+}
